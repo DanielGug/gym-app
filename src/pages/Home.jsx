@@ -14,7 +14,7 @@ export default function Home() {
     return { done, total: allExercises.length };
   };
 
-  const todayIndex = new Date().getDay();
+  const currentDayOfWeek = new Date().getDay();
 
   return (
     <div className="min-h-screen bg-gray-900 text-white">
@@ -28,7 +28,7 @@ export default function Home() {
         {/* Today banner */}
         <div className="bg-gray-800 rounded-2xl p-4 mb-6 border border-gray-700">
           <p className="text-gray-400 text-xs uppercase tracking-wider mb-1">Astăzi</p>
-          <p className="text-white font-semibold">{DAYS_OF_WEEK[todayIndex]}</p>
+          <p className="text-white font-semibold">{DAYS_OF_WEEK[currentDayOfWeek]}</p>
         </div>
 
         {/* Day Cards */}

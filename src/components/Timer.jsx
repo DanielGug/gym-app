@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from 'react';
 
 const RADIUS = 54;
 const CIRCUMFERENCE = 2 * Math.PI * RADIUS;
+const TIMER_INTERVAL_MS = 1000;
 
 export default function Timer({ duration, onComplete }) {
   const [timeLeft, setTimeLeft] = useState(duration);
@@ -21,7 +22,7 @@ export default function Timer({ duration, onComplete }) {
           }
           return t - 1;
         });
-      }, 1000);
+      }, TIMER_INTERVAL_MS);
     }
     return () => clearInterval(intervalRef.current);
   }, [isRunning, onComplete]);
