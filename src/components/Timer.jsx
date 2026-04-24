@@ -10,7 +10,7 @@ export default function Timer({ duration, onComplete }) {
   const intervalRef = useRef(null);
 
   useEffect(() => {
-    if (isRunning && timeLeft > 0) {
+    if (isRunning) {
       intervalRef.current = setInterval(() => {
         setTimeLeft(t => {
           if (t <= 1) {
