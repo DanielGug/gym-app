@@ -24,7 +24,7 @@ export default function Timer({ duration, onComplete }) {
       }, 1000);
     }
     return () => clearInterval(intervalRef.current);
-  }, [isRunning]);
+  }, [isRunning, onComplete]);
 
   const progress = (duration - timeLeft) / duration;
   const strokeDashoffset = CIRCUMFERENCE * (1 - progress);
